@@ -1,0 +1,4 @@
+chats:
+  - from: "Временная"
+    to: "Пересыл тест"
+    only_url: True
