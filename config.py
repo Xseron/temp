@@ -49,7 +49,7 @@ async def update_config(client):
         with open('data/chats.yaml', mode='r', encoding="UTF-8") as chatss:
             chats_from_file = yaml.load(chatss.read(), Loader=yaml.Loader)["chats"]
         
-        chats_ls = [Chat(chat["from"], chat["to"], chat["only_url"])  for chat in chats_from_file]
+            chats_ls = [Chat(chat["from"], chat["to"], chat["only_url"])  for chat in chats_from_file]
         
         async for dialog in client.iter_dialogs():
             for index, (cfrom, cto) in enumerate(zip([ch.cfrom for ch in chats_ls], [ch.cto for ch in chats_ls])):
@@ -66,7 +66,7 @@ async def update_config(client):
                 
         print("Config changed!")
         chatss = temp.copy()
-        return temp
+        return chatss
     print("Config stayes!")
     return chatss
 

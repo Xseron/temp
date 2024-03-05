@@ -4,7 +4,7 @@ import asyncio
 import re
 from telethon.tl.types import MessageEntityTextUrl
 
-client = TelegramClient('session_name', int(CONFIG["api"]), CONFIG["api_hash"])
+client = TelegramClient('test', int(CONFIG["api"]), CONFIG["api_hash"])
 
 async def get_urls():
     print()
@@ -41,6 +41,5 @@ async def normal_handler(event):
         await client.send_message(entity=current_c.dto, message=user_mess)
 
 print("starting bot...")
-asyncio.ensure_future(update_config(client))
 client.start()
 client.run_until_disconnected()
